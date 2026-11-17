@@ -11,270 +11,147 @@
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap">
 <style>
 body{margin:0}
 html{scroll-behavior:smooth}
 a{color:inherit}
-a:hover{opacity:.88}
+a:hover{opacity:.9}
 @keyframes era-spin{to{transform:rotate(360deg)}}
 @keyframes era-marquee{to{transform:translateX(-50%)}}
+@keyframes era-marquee-r{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 @keyframes era-float{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-10px) rotate(var(--r,0deg))}}
-.era-spin{animation:era-spin 28s linear infinite;transform-origin:50% 50%}
-.era-track{animation:era-marquee 38s linear infinite}
+.era-spin{animation:era-spin 30s linear infinite;transform-origin:50% 50%}
+.era-track{animation:era-marquee 40s linear infinite}
+.era-track-r{animation:era-marquee-r 40s linear infinite}
 .era-float{animation:era-float 7s ease-in-out infinite}
-.era-row{transition:background .3s ease,padding .3s ease}
-.era-row:hover{background:rgba(239,207,168,0.08);padding-left:20px}
-@media (prefers-reduced-motion: reduce){.era-spin,.era-track,.era-float{animation:none}}
+.era-card{transition:transform .35s ease,background .35s ease,border-color .35s ease}
+.era-card:hover{transform:translateY(-6px);background:rgba(239,207,168,0.12);border-color:#EFCFA8}
+.era-tile{transition:transform .35s ease}
+.era-tile:hover{transform:scale(1.02)}
+.era-row{transition:padding .3s ease,background .3s ease}
+.era-row:hover{padding-left:14px;background:rgba(232,176,122,0.08)}
+@media (prefers-reduced-motion: reduce){.era-spin,.era-track,.era-track-r,.era-float{animation:none}}
 </style>
 </head>
 <body>
-<div style="font-family: Manrope, sans-serif; color: #F3E3CC; background: #1C120C; min-height: 100vh; overflow: hidden">
-
-<!-- HERO -->
-<header id="topo" style="position: relative; background: radial-gradient(120% 90% at 85% 20%, #8A5A40 0%, #5E3A28 38%, #2A1A12 75%, #1C120C 100%)">
-<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.22; mix-blend-mode: overlay; pointer-events: none"><filter id="g1"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#g1)"></rect></svg>
-<nav aria-label="Principal" style="position: relative; max-width: 1280px; margin: 0 auto; padding: 26px 32px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between">
-<a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 14px">
-<img src="img/logo-creme.png" alt="ERA 360" style="height: 46px; width: auto; display: block">
-</a>
-<div style="display: flex; flex-wrap: wrap; gap: 6px 30px; align-items: center; font-size: 14px; font-weight: 600; letter-spacing: 0.04em">
-<a href="index.html" style="text-decoration: none; padding: 12px 0">Início</a>
-<a href="#servicos" style="text-decoration: none; padding: 12px 0">Serviços</a>
-<a href="#metodo" style="text-decoration: none; padding: 12px 0">Método</a>
-<a href="#case" style="text-decoration: none; padding: 12px 0">Case</a>
-<a href="#sobre" style="text-decoration: none; padding: 12px 0">Sobre</a>
-<a href="https://wa.me/5553981554629" style="text-decoration: none; border: 1px solid rgba(239,207,168,0.55); color: #FAF0DC; padding: 12px 22px; border-radius: 999px">Fale com a gente</a>
-</div>
+<div style="font-family: Manrope, sans-serif; color: #2A1A12; background: #F3ECE3; min-height: 100vh; overflow: hidden">
+<header style="position: relative; overflow: hidden">
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.45; mix-blend-mode: multiply; pointer-events: none"><filter id="ghA"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch"></feTurbulence><feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.32  0 0 0 0 0.22  0 0 0 0.18 0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#ghA)"></rect></svg>
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 40px; transform: translateX(-28%); font-family: Fraunces, serif; font-weight: 600; font-size: 520px; line-height: 0.8; color: #764B36; opacity: 0.08; letter-spacing: -0.04em">360</div>
+<nav aria-label="Principal" style="position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 26px 40px; display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; color: #2A1A12">
+<a href="index.html" style="display: flex"><img src="img/logo-marrom.png" alt="ERA 360, voltar ao início" style="height: 40px; width: auto; display: block"></a>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 26px; align-items: center; font-size: 14px; font-weight: 600"><a href="marketing.html" style="text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Marketing</a><a href="gestao-administrativa.html" style="text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Gestão</a><a href="gestao-comercial.html" style="text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Comercial</a><a href="automacoes.html" style="text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Automações</a><a href="agencia.html" style="text-decoration: none; padding: 8px 0; border-bottom: 2px solid #764B36">A agência</a><a href="https://wa.me/5553981554629" style="text-decoration: none; background: #2A1A12; color: #F3ECE3; padding: 12px 22px; border-radius: 999px">Fale com a gente</a></div>
 </nav>
-
-<div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 56px 32px 120px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
-<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 32px">
-<div style="display: flex; align-items: center; gap: 14px; font-size: 13px; font-weight: 700; letter-spacing: 0.26em; color: #EFCFA8"><span style="width: 40px; height: 1px; background: #EFCFA8"></span>AGÊNCIA DE MARKETING E GESTÃO · RS</div>
-<h1 style="margin: 0; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(52px, 7.4vw, 112px); line-height: 0.96; letter-spacing: -0.02em; color: #FAF0DC">A próxima era<br>do seu negócio,<br><span style="font-style: italic; color: #EFCFA8">sem pontas soltas.</span></h1>
-<p style="margin: 0; font-size: 20px; line-height: 1.6; color: #E6D5BE; max-width: 540px">Para empresas que já vendem e querem crescer com organização. A gente cuida do online que o seu cliente vê e do offline que faz a sua empresa funcionar.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
-<a href="https://wa.me/5553981554629" style="text-decoration: none; background: #FAF0DC; color: #3B2418; padding: 20px 34px; border-radius: 999px; font-weight: 700; font-size: 16px; display: inline-flex; gap: 12px; align-items: center">Quero um diagnóstico <span aria-hidden="true">→</span></a>
-<a href="#servicos" style="text-decoration: none; color: #FAF0DC; padding: 20px 8px; font-weight: 600; font-size: 16px; border-bottom: 1px solid rgba(250,240,220,0.4)">Conhecer os serviços</a>
+<div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 10px 40px 0; display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-end">
+<div style="flex: 1 1 580px; min-width: 0; display: flex; flex-direction: column; gap: 24px; padding-bottom: 70px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.28em; color: #8A4A28">// A AGÊNCIA</span>
+<h1 style="margin: 0; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(54px, 6.6vw, 104px); line-height: 0.94; letter-spacing: -0.03em">Uma era de <span style="font-style: italic; color: #764B36">olhar para tudo.</span></h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #5A4334; max-width: 540px">O seu cliente vê o online. A sua empresa vive do offline. A ERA 360 cuida dos dois, porque um não cresce sem o outro.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 18px; align-items: center"><a href="https://wa.me/5553981554629" style="text-decoration: none; background: #2A1A12; color: #F3ECE3; padding: 19px 32px; border-radius: 999px; font-weight: 700; font-size: 16px">Quero um diagnóstico →</a><a href="#ecossistema" style="text-decoration: none; font-weight: 600; font-size: 15px; border-bottom: 1px solid #2A1A12; padding-bottom: 3px">Ver serviços</a></div>
 </div>
-</div>
-
-<!-- Colagem de mockups -->
-<div style="flex: 1 1 420px; min-width: 0; position: relative; height: 620px">
-<figure style="margin: 0; position: absolute; top: 10px; right: 0; width: 78%; height: 440px; border-radius: 8px; overflow: hidden; background: #3B2418; box-shadow: 0 40px 80px rgba(0,0,0,0.45)">
-<img src="img/estefany.jpg" alt="Estefany, fundadora da ERA 360" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: sepia(0.35) saturate(0.85) contrast(1.05)">
-<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(118,75,54,0.15) 0%, rgba(28,18,12,0) 45%, rgba(28,18,12,0.75) 100%)"></div>
-<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.3; mix-blend-mode: overlay"><filter id="g2"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#g2)"></rect></svg>
-<figcaption style="position: absolute; right: 20px; bottom: 18px; text-align: right; display: flex; flex-direction: column; gap: 2px"><span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #FAF0DC">Estefany</span><span style="font-size: 11px; letter-spacing: 0.18em; font-weight: 700; color: #EFCFA8">FUNDADORA</span></figcaption>
-</figure>
-
-<div class="era-float" style="--r: -5deg; position: absolute; left: 0; top: 120px; width: 240px; height: 470px; border-radius: 40px; background: #0E0906; padding: 9px; box-shadow: 0 30px 60px rgba(0,0,0,0.55)">
-<div style="width: 100%; height: 100%; border-radius: 32px; overflow: hidden; background: #ECE5DD; display: flex; flex-direction: column; color: #1F1F1F">
-<div style="background: #075E54; color: #FFFFFF; padding: 30px 14px 12px; display: flex; gap: 10px; align-items: center">
-<span style="width: 32px; height: 32px; border-radius: 50%; background: #EFCFA8"></span>
-<div style="display: flex; flex-direction: column"><strong style="font-size: 13px">Novo lead</strong><span style="font-size: 10px; opacity: 0.85">via anúncio no Instagram</span></div>
-</div>
-<div style="flex: 1; padding: 14px 10px; display: flex; flex-direction: column; gap: 8px; font-size: 11.5px; line-height: 1.4">
-<div style="align-self: flex-start; background: #FFFFFF; padding: 8px 10px; border-radius: 10px; max-width: 80%">Oi! Vi o anúncio de vocês e queria saber mais.</div>
-<div style="align-self: flex-end; background: #DCF8C6; padding: 8px 10px; border-radius: 10px; max-width: 82%">Oi, Ana! Que bom que chegou até a gente. Posso te fazer duas perguntas rápidas?</div>
-<div style="align-self: flex-start; background: #FFFFFF; padding: 8px 10px; border-radius: 10px; max-width: 80%">Pode sim!</div>
-<div style="align-self: center; margin-top: 6px; background: rgba(7,94,84,0.12); color: #075E54; padding: 6px 10px; border-radius: 999px; font-size: 10px; font-weight: 700">Lead registrado no CRM ✓</div>
-</div>
-</div>
-</div>
-
-<div class="era-float" style="--r: 4deg; animation-delay: -3s; position: absolute; right: 18px; bottom: 0; width: 230px; border-radius: 22px; background: #FFFCF5; color: #2A1A12; padding: 20px 20px 22px; box-shadow: 0 30px 60px rgba(0,0,0,0.45); display: flex; flex-direction: column; gap: 10px">
-<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: #C99A2E">NOTAS</span>
-<strong style="font-size: 17px">Planejamento · Dezembro</strong>
-<div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px">
-<span style="display: flex; gap: 8px; align-items: center"><span style="width: 14px; height: 14px; border-radius: 50%; background: #C99A2E"></span><span style="text-decoration: line-through; opacity: 0.6">Pauta do mês aprovada</span></span>
-<span style="display: flex; gap: 8px; align-items: center"><span style="width: 14px; height: 14px; border-radius: 50%; background: #C99A2E"></span><span style="text-decoration: line-through; opacity: 0.6">Criativos de tráfego</span></span>
-<span style="display: flex; gap: 8px; align-items: center"><span style="width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid #C99A2E"></span>Roteiro de follow-up</span>
-<span style="display: flex; gap: 8px; align-items: center"><span style="width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid #C99A2E"></span>Reunião de resultados</span>
-</div>
-</div>
-
-<svg class="era-spin" aria-hidden="true" viewBox="0 0 200 200" style="position: absolute; left: 44%; top: -24px; width: 150px; height: 150px">
-<defs><path id="ring" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"></path></defs>
-<circle cx="100" cy="100" r="96" fill="#1C120C" fill-opacity="0.55"></circle>
-<text style="font-family: Manrope, sans-serif; font-size: 14.5px; font-weight: 700; letter-spacing: 4px" fill="#EFCFA8"><textPath href="#ring">PLANEJAMENTO · PROCESSO · EXECUÇÃO ·</textPath></text>
-<text x="100" y="112" text-anchor="middle" style="font-family: Fraunces, serif; font-style: italic; font-size: 36px" fill="#FAF0DC">360</text>
-</svg>
-</div>
-</div>
+<div style="flex: 0 1 420px; min-width: 0; position: relative; height: 470px">
+<div aria-hidden="true" style="position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 380px; height: 380px; border-radius: 50%; background: #764B36"></div>
+<div aria-hidden="true" style="position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%); width: 412px; height: 412px; border-radius: 50%; border: 1.5px solid #764B36"></div>
+<img src="img/estefany-recorte.png" alt="Estefany, fundadora da ERA 360" style="position: absolute; left: 50%; bottom: 0; transform: translateX(-46%); height: 470px; width: auto; filter: saturate(0.9)">
+</div></div>
 </header>
 
-<!-- MARQUEE -->
-<div aria-hidden="true" style="background: #EFCFA8; color: #2A1A12; overflow: hidden; border-top: 1px solid #2A1A12; border-bottom: 1px solid #2A1A12">
-<div class="era-track" style="display: flex; width: max-content; padding: 22px 0; font-family: Fraunces, serif; font-size: 30px; font-style: italic; white-space: nowrap">
-<span style="padding: 0 28px">Social media</span><span style="padding: 0 8px">✦</span><span style="padding: 0 28px">Tráfego pago</span><span style="padding: 0 8px">✦</span><span style="padding: 0 28px">Gestão comercial</span><span style="padding: 0 8px">✦</span><span style="padding: 0 28px">Gestão administrativa</span><span style="padding: 0 8px">✦</span><span style="padding: 0 28px">Automações</span><span style="padding: 0 8px">✦</span><span style="padding: 0 28px">Sites e landing pages</span><span style="padding: 0 8px">✦</span>
-<span style="padding: 0 28px">Social media</span><span style="padding: 0 8px">✦</span><span style="padding: 0 28px">Tráfego pago</span><span style="padding: 0 8px">✦</span><span style="padding: 0 28px">Gestão comercial</span><span style="padding: 0 8px">✦</span><span style="padding: 0 28px">Gestão administrativa</span><span style="padding: 0 8px">✦</span><span style="padding: 0 28px">Automações</span><span style="padding: 0 8px">✦</span><span style="padding: 0 28px">Sites e landing pages</span><span style="padding: 0 8px">✦</span>
-</div>
-</div>
-
-<!-- MANIFESTO (papel) -->
-<section style="position: relative; background: #F5EBDC; color: #2A1A12">
-<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.5; mix-blend-mode: multiply; pointer-events: none"><filter id="g3"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4"></feTurbulence><feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.32  0 0 0 0 0.22  0 0 0 0.18 0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#g3)"></rect></svg>
-<div style="position: relative; max-width: 1100px; margin: 0 auto; padding: 140px 32px; display: flex; flex-direction: column; gap: 40px; align-items: center; text-align: center">
-<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.26em; color: #8A4A28">MANIFESTO</span>
-<p style="margin: 0; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(34px, 4.6vw, 64px); line-height: 1.15; letter-spacing: -0.01em">O seu cliente vê o <span style="font-style: italic; color: #8A4A28">online.</span> A sua empresa vive do <span style="font-style: italic; color: #8A4A28">offline.</span> A gente cuida dos dois, porque um não cresce sem o outro.</p>
-<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #5A4334; max-width: 640px">Atendemos empresas que não perdem clientes, mas não têm mais espaço para novos e sentem o lucro travado. O problema quase nunca é só o post.</p>
-</div>
-</section>
-
-<!-- SERVIÇOS -->
-<section id="servicos" style="position: relative; background: #1C120C">
-<div style="max-width: 1280px; margin: 0 auto; padding: 130px 32px 110px">
+<section id="ecossistema" style="background: #FFFCF5; border-top: 1px solid #E6D9C8">
+<div style="max-width: 1180px; margin: 0 auto; padding: 120px 40px; display: flex; flex-direction: column; gap: 20px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.28em; color: #8A4A28">// O ECOSSISTEMA ERA 360</span>
 <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; justify-content: space-between">
-<h2 style="margin: 0; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; color: #FAF0DC; flex: 1 1 520px">Um <span style="font-style: italic; color: #EFCFA8">ecossistema</span>,<br>não um pacote.</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #CDB89E; flex: 0 1 400px">Cada braço da ERA 360 é especialista em uma parte do seu negócio. Você monta, com a gente, o que faz sentido agora.</p>
+<h2 style="margin: 0; flex: 1 1 520px; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(36px, 4vw, 56px); line-height: 1.04">Um ecossistema, <span style="font-style: italic; color: #764B36">não um pacote.</span></h2>
+<p style="margin: 0; flex: 0 1 400px; font-size: 17px; line-height: 1.65; color: #5A4334">Cada braço da ERA 360 é especialista em uma parte do seu negócio. Você monta, com a gente, o que faz sentido agora.</p>
 </div>
-<div style="margin-top: 72px; border-top: 1px solid rgba(239,207,168,0.25)">
-<div class="era-row" style="display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: baseline; padding: 38px 0; border-bottom: 1px solid rgba(239,207,168,0.25)">
-<span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #EFCFA8; width: 60px">01</span>
-<h3 style="margin: 0; font-family: Fraunces, serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); color: #FAF0DC; flex: 1 1 380px"><a href="marketing.html" style="text-decoration: none">ERA 360 Marketing <span aria-hidden="true" style="font-size: 0.6em; color: #EFCFA8">↗</span></a></h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #CDB89E; flex: 1 1 340px">Social media, tráfego pago no Meta e no Google, captação de conteúdo, sites e landing pages.</p>
-</div>
-<div class="era-row" style="display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: baseline; padding: 38px 0; border-bottom: 1px solid rgba(239,207,168,0.25)">
-<span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #EFCFA8; width: 60px">02</span>
-<h3 style="margin: 0; font-family: Fraunces, serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); color: #FAF0DC; flex: 1 1 380px"><a href="gestao-administrativa.html" style="text-decoration: none">Gestão Administrativa <span aria-hidden="true" style="font-size: 0.6em; color: #EFCFA8">↗</span></a></h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #CDB89E; flex: 1 1 340px">Financeiro, fluxo de caixa, precificação e margem. O controle que dá base para crescer com segurança.</p>
-</div>
-<div class="era-row" style="display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: baseline; padding: 38px 0; border-bottom: 1px solid rgba(239,207,168,0.25)">
-<span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #EFCFA8; width: 60px">03</span>
-<h3 style="margin: 0; font-family: Fraunces, serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); color: #FAF0DC; flex: 1 1 380px"><a href="gestao-comercial.html" style="text-decoration: none">Gestão Comercial <span aria-hidden="true" style="font-size: 0.6em; color: #EFCFA8">↗</span></a></h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #CDB89E; flex: 1 1 340px">Atendimento antes, durante e depois da venda: controle de leads, manual de atendimento e roteiro de follow-up.</p>
-</div>
-<div class="era-row" style="display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: baseline; padding: 38px 0; border-bottom: 1px solid rgba(239,207,168,0.25)">
-<span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #EFCFA8; width: 60px">04</span>
-<h3 style="margin: 0; font-family: Fraunces, serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); color: #FAF0DC; flex: 1 1 380px"><a href="automacoes.html" style="text-decoration: none">ERA 360 Automações <span aria-hidden="true" style="font-size: 0.6em; color: #EFCFA8">↗</span></a></h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #CDB89E; flex: 1 1 340px">Processos do dia a dia rodando sozinhos, desenhados a partir de como a sua empresa funciona de verdade.</p>
-</div>
-</div>
-</div>
-</section>
+<div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px"><a href="marketing.html" class="era-tile" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px; padding: 26px 24px 24px; background: #FFFFFF; border-radius: 4px; border-top: 3px solid #764B36; box-shadow: 0 1px 0 rgba(42,26,18,0.06), 0 18px 40px rgba(42,26,18,0.07)">
+<span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #8A4A28">01</span>
+<span style="font-family: Fraunces, serif; font-size: 23px; line-height: 1.2; color: #2A1A12">Marketing</span><span style="font-size: 15.5px; line-height: 1.6; color: #5A4334">Social media, tráfego pago e captação de conteúdo pensados para levar o seu cliente do Instagram até o seu WhatsApp.</span><span style="margin-top: auto; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #8A4A28">SAIBA MAIS →</span></a><a href="gestao-administrativa.html" class="era-tile" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px; padding: 26px 24px 24px; background: #FFFFFF; border-radius: 4px; border-top: 3px solid #764B36; box-shadow: 0 1px 0 rgba(42,26,18,0.06), 0 18px 40px rgba(42,26,18,0.07)">
+<span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #8A4A28">02</span>
+<span style="font-family: Fraunces, serif; font-size: 23px; line-height: 1.2; color: #2A1A12">Gestão Administrativa</span><span style="font-size: 15.5px; line-height: 1.6; color: #5A4334">Organização financeira, fluxo de caixa, precificação e margem para você decidir com número, não com sensação.</span><span style="margin-top: auto; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #8A4A28">SAIBA MAIS →</span></a><a href="gestao-comercial.html" class="era-tile" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px; padding: 26px 24px 24px; background: #FFFFFF; border-radius: 4px; border-top: 3px solid #764B36; box-shadow: 0 1px 0 rgba(42,26,18,0.06), 0 18px 40px rgba(42,26,18,0.07)">
+<span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #8A4A28">03</span>
+<span style="font-family: Fraunces, serif; font-size: 23px; line-height: 1.2; color: #2A1A12">Gestão Comercial</span><span style="font-size: 15.5px; line-height: 1.6; color: #5A4334">Atendimento antes, durante e depois da venda: processo, roteiro e controle para nenhum cliente ficar sem resposta.</span><span style="margin-top: auto; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #8A4A28">SAIBA MAIS →</span></a><a href="automacoes.html" class="era-tile" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px; padding: 26px 24px 24px; background: #FFFFFF; border-radius: 4px; border-top: 3px solid #764B36; box-shadow: 0 1px 0 rgba(42,26,18,0.06), 0 18px 40px rgba(42,26,18,0.07)">
+<span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #8A4A28">04</span>
+<span style="font-family: Fraunces, serif; font-size: 23px; line-height: 1.2; color: #2A1A12">Automações</span><span style="font-size: 15.5px; line-height: 1.6; color: #5A4334">Processos do dia a dia rodando sozinhos, desenhados a partir de como a sua empresa funciona de verdade.</span><span style="margin-top: auto; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #8A4A28">SAIBA MAIS →</span></a></div>
+</div></section>
 
-<!-- MÉTODO -->
-<section id="metodo" style="position: relative; background: #764B36; overflow: hidden">
-<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.2; mix-blend-mode: overlay; pointer-events: none"><filter id="g4"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#g4)"></rect></svg>
-<svg aria-hidden="true" viewBox="0 0 600 600" style="position: absolute; right: -180px; top: -120px; width: 720px; height: 720px; opacity: 0.18"><circle cx="300" cy="300" r="280" fill="none" stroke="#EFCFA8" stroke-width="1"></circle><circle cx="300" cy="300" r="210" fill="none" stroke="#EFCFA8" stroke-width="1"></circle><circle cx="300" cy="300" r="140" fill="none" stroke="#EFCFA8" stroke-width="1"></circle><line x1="20" y1="300" x2="580" y2="300" stroke="#EFCFA8"></line><line x1="300" y1="20" x2="300" y2="580" stroke="#EFCFA8"></line></svg>
-<div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 130px 32px">
-<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.26em; color: #EFCFA8">O MÉTODO</span>
-<h2 style="margin: 20px 0 0; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(40px, 5vw, 76px); line-height: 1.02; color: #FAF0DC; max-width: 860px">Primeiro a gente <span style="font-style: italic; color: #EFCFA8">entende.</span><br>Depois executa.</h2>
-<div style="margin-top: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
-<div style="background: rgba(28,18,12,0.35); border: 1px solid rgba(239,207,168,0.3); border-radius: 6px; padding: 34px 28px; display: flex; flex-direction: column; gap: 16px; backdrop-filter: blur(4px)">
-<span style="font-family: Fraunces, serif; font-weight: 300; font-size: 64px; line-height: 1; color: #EFCFA8">i.</span>
-<strong style="font-size: 20px; color: #FAF0DC">Diagnóstico</strong>
-<span style="font-size: 15.5px; line-height: 1.6; color: #E6D5BE">Uma conversa para encontrar o problema real, além do que aparece na rede social.</span>
+<div style="position: relative; height: 150px; overflow: hidden; background: #F3ECE3">
+<div style="position: absolute; top: 28px; left: 0; right: 0"><div aria-hidden="true" style="position: absolute; left: -5%; width: 110%; transform: rotate(-2.5deg); background: #764B36; color: #FAF0DC; overflow: hidden; box-shadow: 0 10px 30px rgba(28,18,12,0.25)"><div class="era-track" style="display: flex; width: max-content; padding: 18px 0; font-family: Fraunces, serif; font-style: italic; font-size: 26px; white-space: nowrap"><span style="padding: 0 26px">Planejamento</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Processo</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Execução</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Sem pontas soltas</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Planejamento</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Processo</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Execução</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Sem pontas soltas</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Planejamento</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Processo</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Execução</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Sem pontas soltas</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Planejamento</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Processo</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Execução</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Sem pontas soltas</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span></div></div></div>
+<div style="position: absolute; top: 58px; left: 0; right: 0"><div aria-hidden="true" style="position: absolute; left: -5%; width: 110%; transform: rotate(2deg); background: #2A1A12; color: #EFCFA8; overflow: hidden; box-shadow: 0 10px 30px rgba(28,18,12,0.25)"><div class="era-track-r" style="display: flex; width: max-content; padding: 18px 0; font-family: Fraunces, serif; font-style: italic; font-size: 26px; white-space: nowrap"><span style="padding: 0 26px">Planejamento</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Processo</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Execução</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Sem pontas soltas</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Planejamento</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Processo</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Execução</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Sem pontas soltas</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Planejamento</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Processo</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Execução</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Sem pontas soltas</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Planejamento</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Processo</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Execução</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span><span style="padding: 0 26px">Sem pontas soltas</span><span aria-hidden="true" style="padding: 0 4px; font-style: normal">✦</span></div></div></div>
 </div>
-<div style="background: rgba(28,18,12,0.35); border: 1px solid rgba(239,207,168,0.3); border-radius: 6px; padding: 34px 28px; display: flex; flex-direction: column; gap: 16px; backdrop-filter: blur(4px)">
-<span style="font-family: Fraunces, serif; font-weight: 300; font-size: 64px; line-height: 1; color: #EFCFA8">ii.</span>
-<strong style="font-size: 20px; color: #FAF0DC">Planejamento</strong>
-<span style="font-size: 15.5px; line-height: 1.6; color: #E6D5BE">Tudo planejado com um mês de antecedência. Nada feito na correria.</span>
-</div>
-<div style="background: rgba(28,18,12,0.35); border: 1px solid rgba(239,207,168,0.3); border-radius: 6px; padding: 34px 28px; display: flex; flex-direction: column; gap: 16px; backdrop-filter: blur(4px)">
-<span style="font-family: Fraunces, serif; font-weight: 300; font-size: 64px; line-height: 1; color: #EFCFA8">iii.</span>
-<strong style="font-size: 20px; color: #FAF0DC">Processo</strong>
-<span style="font-size: 15.5px; line-height: 1.6; color: #E6D5BE">Prazos, rotinas e responsáveis claros, para a sua equipe e para a nossa.</span>
-</div>
-<div style="background: rgba(28,18,12,0.35); border: 1px solid rgba(239,207,168,0.3); border-radius: 6px; padding: 34px 28px; display: flex; flex-direction: column; gap: 16px; backdrop-filter: blur(4px)">
-<span style="font-family: Fraunces, serif; font-weight: 300; font-size: 64px; line-height: 1; color: #EFCFA8">iv.</span>
-<strong style="font-size: 20px; color: #FAF0DC">Execução</strong>
-<span style="font-size: 15.5px; line-height: 1.6; color: #E6D5BE">Entregas no prazo e reuniões de resultado para ajustar o caminho.</span>
-</div>
-</div>
-</div>
-</section>
 
-<!-- CASE -->
-<section id="case" style="position: relative; background: #F5EBDC; color: #2A1A12">
-<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.5; mix-blend-mode: multiply; pointer-events: none"><filter id="g5"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4"></feTurbulence><feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.32  0 0 0 0 0.22  0 0 0 0.18 0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#g5)"></rect></svg>
-<div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 130px 32px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
-<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
-<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.26em; color: #8A4A28">CASE · MAIS CURSOS · DESDE 2024</span>
-<h2 style="margin: 0; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(38px, 4.4vw, 64px); line-height: 1.04">De anúncios genéricos a <span style="font-style: italic; color: #8A4A28">cada lead acompanhado.</span></h2>
+<section style="position: relative; background: #F3ECE3">
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.45; mix-blend-mode: multiply; pointer-events: none"><filter id="gmA"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch"></feTurbulence><feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.32  0 0 0 0 0.22  0 0 0 0.18 0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#gmA)"></rect></svg>
+<div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 120px 40px; display: flex; flex-direction: column; gap: 20px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.28em; color: #8A4A28">// O MÉTODO</span>
+<h2 style="margin: 0; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(36px, 4vw, 56px); line-height: 1.04">Primeiro a gente <span style="font-style: italic; color: #764B36">entende.</span> Depois executa.</h2>
+<div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px"><div class="era-tile" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px; padding: 26px 24px 24px; background: #FFFFFF; border-radius: 4px; border-top: 3px solid #764B36; box-shadow: 0 1px 0 rgba(42,26,18,0.06), 0 18px 40px rgba(42,26,18,0.07)">
+<span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #8A4A28">i.</span>
+<span style="font-family: Fraunces, serif; font-size: 23px; line-height: 1.2; color: #2A1A12">Diagnóstico</span><span style="font-size: 15.5px; line-height: 1.6; color: #5A4334">Uma conversa para encontrar o problema real, além do que aparece na rede social.</span></div><div class="era-tile" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px; padding: 26px 24px 24px; background: #FFFFFF; border-radius: 4px; border-top: 3px solid #764B36; box-shadow: 0 1px 0 rgba(42,26,18,0.06), 0 18px 40px rgba(42,26,18,0.07)">
+<span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #8A4A28">ii.</span>
+<span style="font-family: Fraunces, serif; font-size: 23px; line-height: 1.2; color: #2A1A12">Planejamento</span><span style="font-size: 15.5px; line-height: 1.6; color: #5A4334">Tudo planejado com um mês de antecedência. Nada feito na correria.</span></div><div class="era-tile" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px; padding: 26px 24px 24px; background: #FFFFFF; border-radius: 4px; border-top: 3px solid #764B36; box-shadow: 0 1px 0 rgba(42,26,18,0.06), 0 18px 40px rgba(42,26,18,0.07)">
+<span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #8A4A28">iii.</span>
+<span style="font-family: Fraunces, serif; font-size: 23px; line-height: 1.2; color: #2A1A12">Processo</span><span style="font-size: 15.5px; line-height: 1.6; color: #5A4334">Prazos, rotinas e responsáveis claros, para a sua equipe e para a nossa.</span></div><div class="era-tile" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px; padding: 26px 24px 24px; background: #FFFFFF; border-radius: 4px; border-top: 3px solid #764B36; box-shadow: 0 1px 0 rgba(42,26,18,0.06), 0 18px 40px rgba(42,26,18,0.07)">
+<span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #8A4A28">iv.</span>
+<span style="font-family: Fraunces, serif; font-size: 23px; line-height: 1.2; color: #2A1A12">Execução</span><span style="font-size: 15.5px; line-height: 1.6; color: #5A4334">Entregas no prazo e reuniões de resultado para ajustar o caminho.</span></div></div>
+</div></section>
+
+<section style="background: #FFFCF5; border-top: 1px solid #E6D9C8">
+<div style="max-width: 1180px; margin: 0 auto; padding: 120px 40px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.28em; color: #8A4A28">// CASE · MAIS CURSOS · DESDE 2024</span>
+<h2 style="margin: 0; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(36px, 4vw, 56px); line-height: 1.04">De anúncios genéricos a <span style="font-style: italic; color: #764B36">cada lead acompanhado.</span></h2>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px">
-<div style="border-top: 2px solid #2A1A12; padding-top: 16px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: #7A6050">ANTES</span><span style="font-size: 16px; line-height: 1.55; color: #4A3628">Sem presença no digital, anúncios genéricos e nenhum controle das mensagens e dos leads.</span></div>
-<div style="border-top: 2px solid #8A4A28; padding-top: 16px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: #8A4A28">HOJE</span><span style="font-size: 16px; line-height: 1.55; color: #4A3628">Conteúdo planejado, tráfego no Meta e no Google, site e reunião semanal com a equipe comercial.</span></div>
+<div style="border-top: 2px solid #2A1A12; padding-top: 14px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #7A6050">ANTES</span><span style="font-size: 16px; line-height: 1.55; color: #5A4334">Sem presença no digital, anúncios genéricos e nenhum controle das mensagens e dos leads.</span></div>
+<div style="border-top: 2px solid #764B36; padding-top: 14px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #764B36">HOJE</span><span style="font-size: 16px; line-height: 1.55; color: #5A4334">Conteúdo planejado, tráfego no Meta e no Google, site e reunião semanal com a equipe comercial.</span></div>
 </div>
-<blockquote style="margin: 8px 0 0; padding: 0 0 0 0; font-family: Fraunces, serif; font-style: italic; font-weight: 300; font-size: 24px; line-height: 1.45; color: #2A1A12">“[Depoimento do cliente]”<footer style="margin-top: 12px; font-family: Manrope, sans-serif; font-style: normal; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; color: #7A6050">[Nome], Mais Cursos</footer></blockquote>
+<blockquote style="margin: 6px 0 0; font-family: Fraunces, serif; font-style: italic; font-weight: 300; font-size: 24px; line-height: 1.45">“[Depoimento do cliente]”<footer style="margin-top: 10px; font-family: Manrope, sans-serif; font-style: normal; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: #8A4A28">[NOME], MAIS CURSOS</footer></blockquote>
 </div>
+<div style="flex: 1 1 440px; min-width: 0; background: #F3ECE3; border-radius: 4px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8A4A28">PAINEL DE LEADS</span>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+<div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #2A1A12">NOVO LEAD</span><div style="background: #FFFFFF; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; gap: 6px; border-left: 3px solid #D9C6AE"><span style="height: 7px; width: 70%; background: #D9C6AE; border-radius: 4px"></span><span style="height: 6px; width: 40%; background: #EADFCF; border-radius: 4px"></span></div><div style="background: #FFFFFF; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; gap: 6px; border-left: 3px solid #D9C6AE"><span style="height: 7px; width: 55%; background: #D9C6AE; border-radius: 4px"></span><span style="height: 6px; width: 40%; background: #EADFCF; border-radius: 4px"></span></div><div style="background: #FFFFFF; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; gap: 6px; border-left: 3px solid #D9C6AE"><span style="height: 7px; width: 80%; background: #D9C6AE; border-radius: 4px"></span><span style="height: 6px; width: 40%; background: #EADFCF; border-radius: 4px"></span></div></div><div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #2A1A12">EM ATENDIMENTO</span><div style="background: #FFFFFF; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; gap: 6px; border-left: 3px solid #C79268"><span style="height: 7px; width: 60%; background: #D9C6AE; border-radius: 4px"></span><span style="height: 6px; width: 40%; background: #EADFCF; border-radius: 4px"></span></div><div style="background: #FFFFFF; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; gap: 6px; border-left: 3px solid #C79268"><span style="height: 7px; width: 75%; background: #D9C6AE; border-radius: 4px"></span><span style="height: 6px; width: 40%; background: #EADFCF; border-radius: 4px"></span></div></div><div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #2A1A12">MATRICULADO</span><div style="background: #FFFFFF; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; gap: 6px; border-left: 3px solid #764B36"><span style="height: 7px; width: 65%; background: #D9C6AE; border-radius: 4px"></span><span style="height: 6px; width: 40%; background: #EADFCF; border-radius: 4px"></span></div><div style="background: #FFFFFF; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; gap: 6px; border-left: 3px solid #764B36"><span style="height: 7px; width: 50%; background: #D9C6AE; border-radius: 4px"></span><span style="height: 6px; width: 40%; background: #EADFCF; border-radius: 4px"></span></div></div>
+</div>
+<span style="align-self: flex-start; background: #2A1A12; color: #EFCFA8; border-radius: 999px; padding: 10px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.06em">TODA QUINTA · REUNIÃO DE LEADS COM O COMERCIAL</span>
+</div>
+</div></section>
 
-<!-- Mockup de painel de leads -->
-<div style="flex: 1 1 480px; min-width: 0; position: relative">
-<div style="background: #1C120C; border-radius: 18px; padding: 14px; box-shadow: 0 40px 80px rgba(42,26,18,0.35)">
-<div style="display: flex; gap: 6px; padding: 4px 6px 14px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #5E3A28"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5E3A28"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5E3A28"></span><span style="margin-left: 14px; font-size: 12px; color: #CDB89E; font-weight: 600">Painel de leads</span></div>
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; background: #2A1A12; border-radius: 10px; padding: 14px">
-<div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #EFCFA8">NOVO LEAD</span><div style="background: #3B2418; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 6px"><span style="height: 7px; width: 70%; background: #8A6A55; border-radius: 4px"></span><span style="height: 6px; width: 45%; background: #5E4636; border-radius: 4px"></span></div><div style="background: #3B2418; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 6px"><span style="height: 7px; width: 60%; background: #8A6A55; border-radius: 4px"></span><span style="height: 6px; width: 50%; background: #5E4636; border-radius: 4px"></span></div><div style="background: #3B2418; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 6px"><span style="height: 7px; width: 75%; background: #8A6A55; border-radius: 4px"></span><span style="height: 6px; width: 35%; background: #5E4636; border-radius: 4px"></span></div></div>
-<div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #EFCFA8">EM ATENDIMENTO</span><div style="background: #3B2418; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 6px"><span style="height: 7px; width: 65%; background: #8A6A55; border-radius: 4px"></span><span style="height: 6px; width: 40%; background: #5E4636; border-radius: 4px"></span></div><div style="background: #3B2418; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 6px; outline: 1.5px solid #EFCFA8"><span style="height: 7px; width: 80%; background: #EFCFA8; border-radius: 4px"></span><span style="height: 6px; width: 50%; background: #8A6A55; border-radius: 4px"></span></div></div>
-<div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #EFCFA8">MATRICULADO</span><div style="background: #3B2418; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 6px"><span style="height: 7px; width: 55%; background: #8A6A55; border-radius: 4px"></span><span style="height: 6px; width: 45%; background: #5E4636; border-radius: 4px"></span></div><div style="background: #3B2418; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 6px"><span style="height: 7px; width: 70%; background: #8A6A55; border-radius: 4px"></span><span style="height: 6px; width: 30%; background: #5E4636; border-radius: 4px"></span></div></div>
+<section style="position: relative; background: #F3ECE3">
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.45; mix-blend-mode: multiply; pointer-events: none"><filter id="geA"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch"></feTurbulence><feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.32  0 0 0 0 0.22  0 0 0 0.18 0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#geA)"></rect></svg>
+<div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 120px 40px; display: flex; flex-direction: column; gap: 20px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.28em; color: #8A4A28">// QUEM FAZ ACONTECER</span>
+<div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; justify-content: space-between">
+<h2 style="margin: 0; flex: 1 1 520px; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(36px, 4vw, 56px); line-height: 1.04">Começou com a Estefany. <span style="font-style: italic; color: #764B36">Hoje é uma equipe.</span></h2>
+<p style="margin: 0; flex: 0 1 400px; font-size: 17px; line-height: 1.65; color: #5A4334">Nascemos no Rio Grande do Sul e atendemos 100% online, com visitas presenciais quando faz sentido.</p>
 </div>
+<div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="aspect-ratio: 4 / 5; border-radius: 4px; overflow: hidden; background: #E6D9C8"><img src="img/estefany.jpg" alt="Estefany" style="width: 100%; height: 100%; object-fit: cover; object-position: 45% 30%; filter: sepia(0.2) saturate(0.9)"></div>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: Fraunces, serif; font-size: 22px">Estefany</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8A4A28">FUNDADORA · ESTRATÉGIA</span></figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="aspect-ratio: 4 / 5; border-radius: 4px; overflow: hidden; background: #E6D9C8"><img src="img/jenyfer.jpg" alt="Jenyfer" style="width: 100%; height: 100%; object-fit: cover; object-position: 55% 70%; filter: sepia(0.2) saturate(0.9)"></div>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: Fraunces, serif; font-size: 22px">Jenyfer</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8A4A28">OPERAÇÕES</span></figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="aspect-ratio: 4 / 5; border-radius: 4px; overflow: hidden; background: #E6D9C8"><img src="img/marcela.jpg" alt="Marcela" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; filter: sepia(0.2) saturate(0.9)"></div>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: Fraunces, serif; font-size: 22px">Marcela</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: #8A4A28">DESIGN</span></figcaption></figure>
 </div>
-<div class="era-float" style="--r: -3deg; position: absolute; left: -18px; bottom: -36px; background: #EFCFA8; color: #2A1A12; border-radius: 14px; padding: 16px 20px; box-shadow: 0 20px 40px rgba(42,26,18,0.3); display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em">TODA QUINTA</span>
-<strong style="font-family: Fraunces, serif; font-weight: 400; font-size: 20px">Reunião de leads com o comercial</strong>
-</div>
-</div>
-</div>
-</section>
+</div></section>
 
-<!-- SOBRE -->
-<section id="sobre" style="position: relative; background: #1C120C">
-<div style="max-width: 1280px; margin: 0 auto; padding: 130px 32px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
-<div style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px">
-<figure style="margin: 0; grid-column: span 3; height: 460px; border-radius: 6px; position: relative; overflow: hidden; background: #3B2418">
-<img src="img/estefany.jpg" alt="Estefany" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 45% 30%; filter: sepia(0.3) saturate(0.85)">
-<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28,18,12,0) 55%, rgba(28,18,12,0.8) 100%)"></div>
-<figcaption style="position: absolute; left: 18px; bottom: 16px; display: flex; flex-direction: column; gap: 2px"><span style="font-family: Fraunces, serif; font-style: italic; font-size: 22px; color: #FAF0DC">Estefany</span><span style="font-size: 11px; letter-spacing: 0.18em; font-weight: 700; color: #EFCFA8">FUNDADORA · ESTRATÉGIA</span></figcaption>
-</figure>
-<div style="grid-column: span 2; display: flex; flex-direction: column; gap: 14px">
-<figure style="margin: 0; height: 223px; border-radius: 6px; position: relative; overflow: hidden; background: #3B2418">
-<img src="img/jenyfer.jpg" alt="Jenyfer" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 70%; filter: sepia(0.3) saturate(0.85)">
-<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28,18,12,0) 45%, rgba(28,18,12,0.85) 100%)"></div>
-<figcaption style="position: absolute; left: 14px; bottom: 12px; display: flex; flex-direction: column; gap: 2px"><span style="font-family: Fraunces, serif; font-style: italic; font-size: 18px; color: #FAF0DC">Jenyfer</span><span style="font-size: 10px; letter-spacing: 0.18em; font-weight: 700; color: #EFCFA8">OPERAÇÕES</span></figcaption>
-</figure>
-<figure style="margin: 0; height: 223px; border-radius: 6px; position: relative; overflow: hidden; background: #3B2418">
-<img src="img/marcela.jpg" alt="Marcela" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; filter: sepia(0.3) saturate(0.85)">
-<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28,18,12,0) 45%, rgba(28,18,12,0.85) 100%)"></div>
-<figcaption style="position: absolute; left: 14px; bottom: 12px; display: flex; flex-direction: column; gap: 2px"><span style="font-family: Fraunces, serif; font-style: italic; font-size: 18px; color: #FAF0DC">Marcela</span><span style="font-size: 10px; letter-spacing: 0.18em; font-weight: 700; color: #EFCFA8">DESIGN</span></figcaption>
-</figure>
-</div>
-</div>
-<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
-<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.26em; color: #EFCFA8">SOBRE A ERA 360</span>
-<h2 style="margin: 0; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(40px, 4.8vw, 72px); line-height: 1.02; color: #FAF0DC">Uma era de <span style="font-style: italic; color: #EFCFA8">olhar para tudo.</span></h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #CDB89E">A ERA 360 começou com a Estefany, no social media, e hoje tem uma equipe preparada para cuidar do seu negócio de forma completa.</p>
-<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #CDB89E">Nascemos no Rio Grande do Sul e atendemos 100% online, com visitas presenciais quando faz sentido.</p>
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 10px; border-top: 1px solid rgba(239,207,168,0.25)">
-<div style="padding: 22px 16px 0 0; display: flex; flex-direction: column; gap: 6px"><span style="font-family: Fraunces, serif; font-style: italic; font-size: 26px; color: #EFCFA8">Planejamento</span></div>
-<div style="padding: 22px 16px 0; border-left: 1px solid rgba(239,207,168,0.25); display: flex; flex-direction: column; gap: 6px"><span style="font-family: Fraunces, serif; font-style: italic; font-size: 26px; color: #EFCFA8">Processo</span></div>
-<div style="padding: 22px 0 0 16px; border-left: 1px solid rgba(239,207,168,0.25); display: flex; flex-direction: column; gap: 6px"><span style="font-family: Fraunces, serif; font-style: italic; font-size: 26px; color: #EFCFA8">Execução</span></div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- CTA -->
-<section id="contato" style="position: relative; background: radial-gradient(110% 100% at 15% 100%, #8A5A40 0%, #5E3A28 40%, #2A1A12 80%)">
-<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.22; mix-blend-mode: overlay; pointer-events: none"><filter id="g7"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#g7)"></rect></svg>
-<div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 150px 32px 48px; display: flex; flex-direction: column; gap: 36px">
-<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.26em; color: #EFCFA8">VAMOS CONVERSAR</span>
-<h2 style="margin: 0; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(54px, 9vw, 150px); line-height: 0.92; letter-spacing: -0.03em; color: #FAF0DC">Qual é a próxima<br><span style="font-style: italic; color: #EFCFA8">era</span> da sua empresa?</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between">
-<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #E6D5BE; max-width: 520px">Conta pra gente o que está travando o seu negócio. A primeira conversa é para entender, não para vender.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 14px">
-<a href="https://wa.me/5553981554629" style="text-decoration: none; background: #FAF0DC; color: #3B2418; padding: 22px 36px; border-radius: 999px; font-weight: 700; font-size: 17px; display: inline-flex; gap: 12px; align-items: center">Chamar no WhatsApp <span aria-hidden="true">→</span></a>
-<a href="https://instagram.com/agenciaera360" style="text-decoration: none; border: 1px solid rgba(250,240,220,0.5); color: #FAF0DC; padding: 22px 32px; border-radius: 999px; font-weight: 600; font-size: 17px">@agenciaera360</a>
-</div>
-</div>
-<footer style="margin-top: 110px; padding-top: 26px; border-top: 1px solid rgba(250,240,220,0.22); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: baseline; font-size: 14px; color: #CDB89E">
-<img src="img/logo-creme.png" alt="ERA 360" style="height: 38px; width: auto; display: block">
-<span>© 2026 ERA 360 · Rio Grande do Sul</span>
+<section style="position: relative; background: #764B36; color: #FAF0DC; overflow: hidden">
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.2; mix-blend-mode: overlay; pointer-events: none"><filter id="gk9"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="100%" height="100%" filter="url(#gk9)"></rect></svg>
+<div aria-hidden="true" style="position: absolute; right: -120px; top: -120px; width: 520px; height: 520px; border-radius: 50%; border: 1.5px solid rgba(250,240,220,0.3)"></div>
+<div aria-hidden="true" style="position: absolute; right: -60px; top: -60px; width: 400px; height: 400px; border-radius: 50%; border: 1.5px solid rgba(250,240,220,0.2)"></div>
+<div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 120px 40px; display: flex; flex-direction: column; gap: 26px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.28em; color: #EFCFA8">// VAMOS CONVERSAR</span>
+<h2 style="margin: 0; font-family: Fraunces, serif; font-weight: 300; font-size: clamp(44px, 6vw, 92px); line-height: 0.96; letter-spacing: -0.02em; max-width: 960px">Qual é a próxima <span style="font-style: italic; color: #EFCFA8">era</span> da sua empresa?</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #F3E3CC; max-width: 560px">Conta pra gente o que está travando o seu negócio. A primeira conversa é para entender, não para vender.</p>
+<div><a href="https://wa.me/5553981554629" style="text-decoration: none; background: #FAF0DC; color: #2A1A12; padding: 20px 34px; border-radius: 999px; font-weight: 700; font-size: 16px; display: inline-flex; gap: 12px">Chamar no WhatsApp <span aria-hidden="true">→</span></a></div>
+</div></section>
+<footer style="background: #2A1A12; color: #CDB89E">
+<div style="max-width: 1280px; margin: 0 auto; padding: 34px 40px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; font-size: 14px">
+<a href="index.html" style="display: flex"><img src="img/logo-creme.png" alt="ERA 360, voltar ao início" style="height: 32px; width: auto; display: block"></a>
+<span>Agência de marketing e gestão · Rio Grande do Sul</span>
+<a href="https://instagram.com/agenciaera360" style="text-decoration: none; color: #FAF0DC">@agenciaera360</a>
 <span style="font-family: Fraunces, serif; font-style: italic; font-size: 18px; color: #EFCFA8">Sem pontas soltas.</span>
-</footer>
-</div>
-</section>
-
+</div></footer>
 </div>
 </body>
 </html>
